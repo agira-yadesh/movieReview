@@ -1,0 +1,35 @@
+#content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 100px;
+}
+#title {
+  color: rgb(223, 223, 19);
+  text-align: center;
+}
+.movie-card {
+  border: 1px solid rgba(255, 255, 0, 0.493);
+  padding: 15px;
+  margin: 10px auto;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.movie-name {
+  margin-bottom: 10px;
+}
+
+h3,
+p {
+  color: rgba(255, 255, 255, 0.397);
+}
+
+span {
+  color: rgb(255, 255, 255);
+}
+
+/* Style the reviews (p) */
+.reviews {
+  color: #666;
+}

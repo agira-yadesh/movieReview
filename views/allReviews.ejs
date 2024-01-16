@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css"  href="styles/shared.css" />
+    <link rel="stylesheet" type="text/css" href="styles/allReview.css">
+    <title>Movie Card</title>
+  </head>
+  <header>
+    <div class="logo">
+      <a href="/">Quentin Tarantino</a>
+    </div>
+    <nav>
+      <ul>
+        <!-- <li><a id="forReview" href="allReviews">Reviews</a></li> -->
+        <li><a href="https://en.wikipedia.org/wiki/Quentin_Tarantino">About</a></li>
+ 
+      </ul>
+    </nav>
+  </header>
+  <body>
+    <section id="content">
+      <div id="title">
+        <h1>Movie's Review</h1>
+        <h2>Number of Reviews: <%=totalReviews%></h2>
+      </div>
+
+      <!-- Movie Card -->
+      <% for(const review of reviews){%>
+      <div class="movie-card">
+        <!-- Movie Name -->
+        <h3 class="movie-name">Movie: <span><%=review.movieName%></span></h3>
+
+        <!-- Reviews -->
+        <p class="reviews">
+          Review:
+          <span><%=review.review%></span>
+        </p>
+      </div>
+      <%}%>
+    </section>
+  </body>
+</html>
