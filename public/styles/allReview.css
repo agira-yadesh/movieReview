@@ -12,8 +12,13 @@
   border: 1px solid rgba(255, 255, 0, 0.493);
   padding: 15px;
   margin: 10px auto;
-  width: 300px;
+  width: 800px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  word-wrap: break-word;
+  overflow: hidden;
 }
 
 .movie-name {
@@ -32,4 +37,39 @@ span {
 /* Style the reviews (p) */
 .reviews {
   color: #666;
+}
+.empty {
+  background-color: rgba(202, 202, 133, 0.199);
+  color: white;
+  position: relative;
+  top: 130px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 50px;
+  border-radius: 10px;
+}
+.empty p{
+  color: white;
+
+}
+.empty button{
+  background-color: yellow;
+  text-decoration: none;
+  width: 100px;
+  margin: 10px auto;
+  text-align: center;
+  border: 0;
+  font-size: 14px;
+  padding: 10px;
+  color: black;
+  border-radius: 2px;
+
+}
+
+button a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
 }

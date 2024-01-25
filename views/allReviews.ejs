@@ -1,27 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css"  href="styles/shared.css" />
-    <link rel="stylesheet" type="text/css" href="styles/allReview.css">
-    <title>Movie Card</title>
-  </head>
+<%- include('includes/head.ejs')%>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      type="text/css"
+      href="styles/allReview.css"
+    />
+</head>
   <header>
     <div class="logo">
       <a href="/">Quentin Tarantino</a>
     </div>
     <nav>
       <ul>
-        <!-- <li><a id="forReview" href="allReviews">Reviews</a></li> -->
-        <li><a href="https://en.wikipedia.org/wiki/Quentin_Tarantino">About</a></li>
- 
+        <%if(totalReviews>0){%>
+        <li><a id="forReview" href="review">Post reviews</a></li>
+        <%}%>
+        <li>
+          <a href="https://en.wikipedia.org/wiki/Quentin_Tarantino">About</a>
+        </li>
       </ul>
     </nav>
   </header>
   <body>
     <section id="content">
       <div id="title">
+        <% if(totalReviews>0){%>
         <h1>Movie's Review</h1>
         <h2>Number of Reviews: <%=totalReviews%></h2>
       </div>
@@ -30,6 +33,9 @@
       <% for(const review of reviews){%>
       <div class="movie-card">
         <!-- Movie Name -->
+        <% if(!review.Name==''){%>
+        <h3 class="movie-name">Reviewer Name: <span><%=review.Name%></span></h3>
+        <%}%>
         <h3 class="movie-name">Movie: <span><%=review.movieName%></span></h3>
 
         <!-- Reviews -->
@@ -37,8 +43,35 @@
           Review:
           <span><%=review.review%></span>
         </p>
+        <% const num = parseInt(review.Rating)%>
+        <% if(num==1){%>
+        <p>Rating: &#9733;</p>
+        <%}%>
+
+        <% if(num==2){%>
+          <p>Rating: &#9733; &#9733;</p>
+          <%}%>
+
+          <% if(num==3){%>
+            <p>Rating: &#9733; &#9733; &#9733;</p>
+            <%}%>
+            <% if(num==4){%>
+              <p>Rating: &#9733; &#9733; &#9733; &#9733;</p>
+              <%}%>
+
+        <% if(num>=5){%>
+          <p>Rating: &#9733; &#9733; &#9733; &#9733; &#9733;</p>
+          <%}%>
+
       </div>
-      <%}%>
+      <% } %> <% } else { %>
+      <div class="empty">
+        <h2>No reviews yet</h2>
+        <p>Be the first to share your thoughts and write a review!</p>
+        <button><a href="review">Post Review</a></button>
+      </div>
+
+      <% } %>
     </section>
   </body>
 </html>
